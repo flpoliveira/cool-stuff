@@ -1,6 +1,34 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/BlurCard.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/blurcard/BlurCard.astro";
+import Card2 from "../components/blurcard/MyBlurCard.astro";
 ---
 
-<Card />
+<div class="container">
+
+    <Card />
+    <Card2 />
+</div>
+
+
+<style>
+    body {
+        display: flex;
+        place-items: center;
+        justify-content: center;
+        min-height: 100svh;
+        touch-action: none;
+        font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue',
+            Helvetica, Arial, sans-serif, system-ui;
+        margin: 0;
+        padding: 0.5rem;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        height: 100vh;
+    }
+</style>

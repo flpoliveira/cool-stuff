@@ -1,0 +1,104 @@
+<article>
+    <div class="assets">
+        <img src="public/assets/apartment.png" alt="Apartments - Photo by Pierre Châtel-Innocenti" />
+        <h3>Housing Market</h3>
+        <div class="image-background" />
+        <div class="blur">
+        </div>
+    </div>
+    <div class="content">
+        <span>Find the best deals</span>
+    </div>
+</article>
+
+
+<style>
+    :root {
+        --x: 0;
+        --y: 0;
+        --contentheight: 20%;
+    }
+
+    article {
+        height: 374px;
+        background-color: black;
+        border-radius: 2em;
+        width: 100%;
+        max-width: 300px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .assets {
+        height: 100%;
+        width: 100%;
+    }
+
+    .assets .image-background {
+        width: 100%;
+        height: 100%;
+        background-color: #013A71;
+    }
+
+    .assets h3 {
+        color: white;
+        position: absolute;
+        left: 10%;
+        font-size: 3rem;
+        translate: -50% 0;
+        translate: calc(-50% + (var(--x) * 400px)) calc(var(--y) * -20px);
+    }
+
+    .assets img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        max-width: 230px;
+        max-height: 230px;
+        right: 0;
+        bottom: 0;
+        object-position: calc(-50% + (var(--x) * 30px)) calc(43% + (var(--y) * -20px));
+    }
+
+
+    /* Blurring */
+    .blur {
+        position: absolute;
+        min-height: var(--contentheight);
+        width: 200px;
+        bottom: 0;
+        left: 50%;
+        margin-left: calc(200px / -2);
+        border-radius: 1em;
+        backdrop-filter: blur(2px);
+        mask: radial-gradient(
+            140% 130% at 45% 90%,
+            #fff 15%,
+            #0000 25%
+        );
+    }
+    
+
+    .content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        min-height: var(--contentheight);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.2rem;
+    }
+
+    .content span {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 0;
+        margin: 0;
+    }
+
+</style>

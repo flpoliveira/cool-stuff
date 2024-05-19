@@ -44,9 +44,9 @@
         color: white;
         position: absolute;
         left: 10%;
+        top: 0;
         font-size: 3rem;
-        translate: -50% 0;
-        translate: calc(-50% + (var(--x) * 400px)) calc(var(--y) * -20px);
+        translate: calc((var(--x) * -20px)) calc(var(--y) * -20px);
     }
 
     .assets img {
@@ -54,13 +54,13 @@
         height: 100%;
         object-fit: cover;
         position: absolute;
-        max-width: 230px;
-        max-height: 230px;
+        translate: 0 20%;
+        z-index: 1;
         right: 0;
-        bottom: 0;
-        object-position: calc(-50% + (var(--x) * 30px)) calc(43% + (var(--y) * -20px));
-    }
+        top: 0;
+        object-position: calc(-50% + (var(--x) * 10px)) calc(43% + (var(--y) * -30px));
 
+    }
 
     /* Blurring */
     .blur {
@@ -77,6 +77,7 @@
             #fff 15%,
             #0000 25%
         );
+        z-index: 3;
     }
     
 
@@ -91,12 +92,12 @@
         justify-content: center;
         align-items: center;
         gap: 0.2rem;
+        z-index: 4;
     }
 
     .content span {
         color: white;
         font-size: 1.2rem;
-        font-weight: bold;
         padding: 0;
         margin: 0;
     }

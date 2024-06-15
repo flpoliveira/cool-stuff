@@ -183,17 +183,3 @@ article {
 }
 
 </style>
-<script>
-
-    import gsap from "gsap";
-    const UPDATE = ({ x, y }) => {
-        gsap.set(document.documentElement, {
-            '--x': gsap.utils.mapRange(0, window.innerWidth, -1, 1, x),
-            '--y': gsap.utils.mapRange(0, window.innerHeight, -1, 1, y),
-        })
-    }
-
-window.addEventListener('mousemove', UPDATE)
-
-
-</script>

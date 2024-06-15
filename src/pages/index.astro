@@ -5,30 +5,40 @@ import Card2 from "../components/blurcard/MyBlurCard.astro";
 ---
 
 <div class="container">
-
-    <Card />
-    <Card2 />
+  <Card />
+  <Card2 />
 </div>
 
-
 <style>
-    body {
-        display: flex;
-        place-items: center;
-        justify-content: center;
-        min-height: 100svh;
-        touch-action: none;
-        font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue',
-            Helvetica, Arial, sans-serif, system-ui;
-        margin: 0;
-        padding: 0.5rem;
-    }
+  body {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    min-height: 100svh;
+    touch-action: none;
+    font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue",
+      Helvetica, Arial, sans-serif, system-ui;
+    margin: 0;
+    padding: 0.5rem;
+  }
 
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        height: 100vh;
-    }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    height: 100vh;
+  }
 </style>
+
+<script>
+  import gsap from "gsap";
+  const UPDATE = ({ x, y }: { x: number; y: number }) => {
+    gsap.set(document.documentElement, {
+      "--x": gsap.utils.mapRange(0, window.innerWidth, -1, 1, x),
+      "--y": gsap.utils.mapRange(0, window.innerHeight, -1, 1, y),
+    });
+  };
+
+  window.addEventListener("mousemove", UPDATE);
+</script>
